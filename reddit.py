@@ -16,7 +16,8 @@ class Py3status:
             # Reddit username goes here:
             user = ''
 
-            r = requests.get('http://www.reddit.com/user/' + user + '/about.json')
+            r = requests.get('http://www.reddit.com/user/' + user +
+                            '/about.json')
 
             about = json.loads(r.text)
             data = about['data']
