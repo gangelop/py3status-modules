@@ -7,7 +7,7 @@ class Py3status:
         """
         Get and display link and comment karma from reddit.
         """
-        response = {'full_text':'', 'name':'reddit'}
+        response = {'full_text':'', 'name':'reddit', 'color':'#ff9000' }
 
         try:
             import json
@@ -27,6 +27,7 @@ class Py3status:
             response['full_text'] += str(data['comment_karma'])
 
         except Exception as e:
-            pass
+            response['full_text'] = 'reddit'
+            response['color'] = '#ff0000'
         finally:
             return (0, response)
