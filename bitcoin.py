@@ -1,9 +1,9 @@
 class Py3status:
 
 
-    def reddit(self, json, i3status_config):
+    def bitcoin(self, json, i3status_config):
         """
-        Get and display link and comment karma from reddit.
+        Display the latest bitcoin/dollar price from bitstamp.net
         """
         response = {'full_text':'BTC: ', 'name':'bitcoin', 'color':'#ffffff' }
 
