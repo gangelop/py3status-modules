@@ -15,7 +15,7 @@ class Py3status:
 
             ticker = json.loads(r.text)
 
-            response['full_text'] += ticker['last'] + '$'
+            response['full_text'] += '$' + ticker['last']
 
         except Exception as e:
             response['color'] = '#ff0000'
