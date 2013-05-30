@@ -8,7 +8,7 @@ class Py3status:
         import time
 
         response = {'full_text':'BTC: ', 'name':'bitcoin', 'color':'#8080FF' }
-        response['cached_until'] = time.time() + 5
+        response['cached_until'] = time.time() + 5 # refresh every 5s
 
         try:
             import json
