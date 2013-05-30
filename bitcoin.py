@@ -5,7 +5,10 @@ class Py3status:
         """
         Display the latest bitcoin/dollar price from bitstamp.net
         """
-        response = {'full_text':'BTC: ', 'name':'bitcoin', 'color':'#ffffff' }
+        import time
+
+        response = {'full_text':'BTC: ', 'name':'bitcoin', 'color':'#8080FF' }
+        response['cached_until'] = time.time() + 5
 
         try:
             import json
