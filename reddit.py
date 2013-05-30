@@ -11,10 +11,18 @@ class Py3status:
             import json
             import requests
 
-            # Reddit username goes here:
+            # reddit username goes here:
             user = ''
 
-            r = requests.get('http://www.reddit.com/user/' + user +
+            # reddit.com asks that we use a unique user agent
+            # for accessing the api.
+            # See https://github.com/reddit/reddit/wiki/API#rules
+            # NEVER LIE ABOUT YOUR USER-AGENT!!!
+            user_agent = 'py3status from /u/' + user + ' :D'
+
+            s = requests.Session()
+            s.headers.update({'User-Agent':user_agent})
+            r = s.get('http://www.reddit.com/user/' + user +
                             '/about.json')
 
             about = json.loads(r.text)
