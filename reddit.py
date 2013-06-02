@@ -8,7 +8,6 @@ class Py3status:
         response = {'full_text':'', 'name':'reddit', 'color':'#ff9000' }
 
         try:
-            import json
             import requests
 
             # reddit username goes here:
@@ -25,7 +24,7 @@ class Py3status:
             r = s.get('http://www.reddit.com/user/' + user +
                             '/about.json')
 
-            about = json.loads(r.text)
+            about = r.json()
             data = about['data']
             response['full_text'] = 'reddit: '
             response['full_text'] += str(data['link_karma'])

@@ -11,12 +11,10 @@ class Py3status:
         response['cached_until'] = time.time() + 5 # refresh every 5s
 
         try:
-            import json
             import requests
 
             r = requests.get('https://www.bitstamp.net/api/ticker/')
-
-            ticker = json.loads(r.text)
+            ticker = r.json()
 
             response['full_text'] += '$' + ticker['last']
 
