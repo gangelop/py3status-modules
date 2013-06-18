@@ -6,6 +6,7 @@ class Py3status:
         Get and display link and comment karma from reddit.
         """
         response = {'full_text':'', 'name':'reddit', 'color':'#ff9000' }
+        position = 0
 
         try:
             import requests
@@ -35,4 +36,4 @@ class Py3status:
             response['full_text'] = 'reddit'
             response['color'] = '#ff0000'
         finally:
-            return (0, response)
+            return (position, response)

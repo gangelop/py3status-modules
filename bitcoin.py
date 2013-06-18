@@ -9,6 +9,7 @@ class Py3status:
 
         response = {'full_text':'BTC: ', 'name':'bitcoin', 'color':'#8080FF' }
         response['cached_until'] = time.time() + 5 # refresh every 5s
+        position = 0
 
         try:
             import requests
@@ -21,4 +22,4 @@ class Py3status:
         except Exception as e:
             response['color'] = '#ff0000'
         finally:
-            return (0, response)
+            return (position, response)
