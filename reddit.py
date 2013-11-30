@@ -1,4 +1,13 @@
 class Py3status:
+    import webbrowser
+
+
+    def on_click(self, json, i3status_config, event):
+        """
+        Handles click events.
+        """
+        if event['button'] == 1:
+            self.webbrowser.get('firefox').open('http://www.reddit.com/user/' + self.user)
 
 
     def reddit(self, json, i3status_config):
@@ -12,17 +21,17 @@ class Py3status:
             import requests
 
             # reddit username goes here:
-            user = ''
+            self.user = ''
 
             # reddit.com asks that we use a unique user agent
             # for accessing the api.
             # See https://github.com/reddit/reddit/wiki/API#rules
             # NEVER LIE ABOUT YOUR USER-AGENT!!!
-            user_agent = 'py3status from /u/' + user + ' :D'
+            user_agent = 'py3status from /u/' + self.user + ' :D'
 
             s = requests.Session()
             s.headers.update({'User-Agent':user_agent})
-            r = s.get('http://www.reddit.com/user/' + user +
+            r = s.get('http://www.reddit.com/user/' + self.user +
                             '/about.json')
 
             about = r.json()
