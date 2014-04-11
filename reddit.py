@@ -1,6 +1,4 @@
 class Py3status:
-    import webbrowser
-
 
     def on_click(self, json, i3status_config, event):
         """
