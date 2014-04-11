@@ -6,8 +6,14 @@ class Py3status:
         """
         Handles click events.
         """
+        import os
+        import subprocess
+
         if event['button'] == 1:
-            self.webbrowser.get('firefox').open('http://www.reddit.com/user/' + self.user)
+            with open(os.devnull, 'w') as fnull:
+                result = subprocess.call(['xdg-open', 'http://www.reddit.com/user/' + self.user],
+                                            stdout=fnull,
+                                            stderr=fnull)
 
 
     def reddit(self, json, i3status_config):
