@@ -20,3 +20,4 @@ Before using this module, you need to set your reddit username in the `self.user
 
 ## bitcoin.py
 Displays the current exchange value of bitcoin in USD from [bitstamp.net](https://www.bitstamp.net/)
+On left click, it opens [bitcoinity.org/markets](http://bitcoinity.org/markets)
