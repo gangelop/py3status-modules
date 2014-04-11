@@ -1,5 +1,18 @@
 class Py3status:
 
+    def on_click(self, json, i3status_config, event):
+        """
+        Handles click events.
+        """
+        import os
+        import subprocess
+
+        if event['button'] == 1:
+            with open(os.devnull, 'w') as fnull:
+                result = subprocess.call(['xdg-open', 'http://bitcoinity.org/markets'],
+                                            stdout=fnull,
+                                            stderr=fnull)
+
 
     def bitcoin(self, json, i3status_config):
         """
