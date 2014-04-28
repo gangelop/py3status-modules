@@ -2,6 +2,8 @@
 
 Modules for py3status
 
+![screenshot](/pics/py3status-modules.png)
+
 ## Requirements
 
 Both these modules require `python-requests`.
