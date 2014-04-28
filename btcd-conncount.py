@@ -6,7 +6,10 @@ class Py3status:
         """
         import time
 
-        response = {'full_text':'btcd: ', 'name':'btcd_conncount', 'color':'#CCCC00' }
+        response = {'full_text':'btcd: ',
+                    'name':'btcd_conncount',
+                    'color':'#CCCC00',
+                    }
         response['cached_until'] = time.time() + 5 # refresh every 5s
         position = 1
 
