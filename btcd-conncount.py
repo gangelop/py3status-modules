@@ -13,9 +13,23 @@ class Py3status:
         try:
             import subprocess
 
-            out = subprocess.getoutput('bitcoind getconnectioncount')
+            sp = subprocess.Popen( ["bitcoind", "getconnectioncount"],
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE,
+                                    )
+            (out, err) = sp.communicate()
+            # this terrible hack servers the dual purpose of
+            # 1. discarding the newline ('\n') from the output
+            # 2. converting the bytecode returned by Popen into actual strings
+            # If there's a more elegant way to do this, let me know.
+            out = out[0:-1].decode('ascii')
+            err = err[0:-1].decode('ascii')
 
-            response['full_text'] += out
+            if sp.returncode > 0:
+                raise Exception("bitcoind failed")
+            else:
+                response['full_text'] += out
+
 
         except Exception as e:
             response['full_text'] = 'btcd'
