@@ -23,5 +23,5 @@ Displays the current exchange value of bitcoin in USD from [bitstamp.net](https:
 On left click, it opens [bitcoinity.org/markets](http://bitcoinity.org/markets)
 
 ## btcd-conncount.py
-Displays the total connection count for bitcoind
+Displays the total connection count for bitcoind.
 On click, switches between displaying total and displaying inbound and outbound connections.
