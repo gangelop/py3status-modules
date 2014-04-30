@@ -3,8 +3,6 @@ class Py3status:
     status = 'total'
 
 
-
-
     def on_click(self, json, i3status_config, event):
         """
         Handles click events.
@@ -13,8 +11,6 @@ class Py3status:
             self.status = 'split'
         else:
             self.status = 'total'
-
-
 
 
     def btcd_conncount(self, json, i3status_config):
