@@ -23,7 +23,7 @@ class Py3status:
                     'name':'btcd_conncount',
                     'color':'#CCCC00',
                     }
-        response['cached_until'] = time.time() + 1 # refresh every 5s
+        response['cached_until'] = time.time() + 1 # refresh every second
         position = 1
 
         try:
