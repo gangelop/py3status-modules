@@ -6,7 +6,7 @@ Modules for py3status
 
 ## Requirements
 
-Both these modules require `python-requests`.
+All of these modules require `python-requests`.
 
 #### on archlinux
 `# pacman -S python-requests`
