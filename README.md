@@ -2,7 +2,8 @@
 
 Modules for py3status
 
-![screenshot](/pics/py3status-modules.png)
+![screenshot](/pics/py3status-modules-1.png)  
+![screenshot](/pics/py3status-modules-2.png)
 
 ## Requirements
 
