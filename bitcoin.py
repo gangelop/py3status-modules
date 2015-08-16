@@ -6,12 +6,10 @@ class Py3status:
         """
         import os
         import subprocess
+        import webbrowser
 
         if event['button'] == 1:
-            with open(os.devnull, 'w') as fnull:
-                result = subprocess.call(['xdg-open', 'http://bitcoinity.org/markets'],
-                                            stdout=fnull,
-                                            stderr=fnull)
+            webbrowser.open_new_tab('http://bitcoinity.org/markets')
 
 
     def bitcoin(self, json, i3status_config):
